@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         GitHub tab render size
 // @namespace    https://github.com/s-h-a-d-o-w
-// @version      1.0.0
+// @version      1.0.1
 // @description  Adds a drop down to the top right area of the source code viewer that
 //               lets you select the render size for tabs.
 //               Also works for gists.
 //               Overrides .editorconfig if one exists in the project!
 //               (Yes, GitHub supports .editorconfig indent size)
-// @author       Andreas Opferkuch
+// @author       s-h-a-d-o-w
 // @match        https://*.github.com/*
 // @grant        none
 // @license      MIT
