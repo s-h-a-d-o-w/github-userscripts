@@ -10,6 +10,7 @@
 // @author       Andreas Opferkuch
 // @match        https://*.github.com/*
 // @grant        none
+// @license      MIT
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
 // @updateURL    https://raw.githubusercontent.com/s-h-a-d-o-w/github-userscripts/master/github-tab-render-size.user.js
 // @downloadURL  https://raw.githubusercontent.com/s-h-a-d-o-w/github-userscripts/master/github-tab-render-size.user.js
