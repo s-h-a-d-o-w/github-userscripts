@@ -11,3 +11,5 @@ Also works for gists.
 
 Overrides .editorconfig if one exists in the project!
 (Yes, GitHub supports .editorconfig indent size)
+
+![github-tab-render-size Screenshot](github-tab-render-size.png?raw=true)
