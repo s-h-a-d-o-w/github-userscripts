@@ -37,28 +37,28 @@ tab-size: ${size} !important;
 	}
 
 	// Create UI (dropdown next in top right area of source code viewer)
-    // ------------------------------------------------------
+	// ------------------------------------------------------
 	let divTabRendering = document.createElement("div");
 	divTabRendering.style.cssText = 'display:inline-block; margin-right:10px';
 
-    let divTextRenderSize = document.createElement("div");
-    divTextRenderSize.innerHTML = 'Tab render size:';
-    divTextRenderSize.style.cssText = 'display:inline-block; vertical-align:middle';
+	let divTextRenderSize = document.createElement("div");
+	divTextRenderSize.innerHTML = 'Tab render size:';
+	divTextRenderSize.style.cssText = 'display:inline-block; vertical-align:middle';
 
-    let selRenderSize = document.createElement("select");
-    selRenderSize.className = 'form-select select-sm js-code-indent-width';
-    selRenderSize.addEventListener('change', saveTabSize);
+	let selRenderSize = document.createElement("select");
+	selRenderSize.className = 'form-select select-sm js-code-indent-width';
+	selRenderSize.addEventListener('change', saveTabSize);
 
-    let options = [1, 2, 4, 8].forEach((el) => {
-        let option = document.createElement("option");
-        option.value = el;
-        option.innerHTML = el;
-        selRenderSize.add(option);
-    });
+	[1, 2, 4, 8].forEach((el) => {
+		let option = document.createElement("option");
+		option.value = el;
+		option.innerHTML = el;
+		selRenderSize.add(option);
+	});
 
-    divTabRendering.appendChild(divTextRenderSize);
-    divTabRendering.appendChild(selRenderSize);
-    // ------------------------------------------------------
+	divTabRendering.appendChild(divTextRenderSize);
+	divTabRendering.appendChild(selRenderSize);
+	// ------------------------------------------------------
 
 	// Loads tab size from local storage and updates the style (as well as the dropdown)
 	function loadTabSize() {
@@ -77,17 +77,17 @@ tab-size: ${size} !important;
 	}
 
 	// Attach UI, hook up even listener and get possibly stored value from local storage
-    let attachUI = () => {
-        let fileActions = document.getElementsByClassName('file-actions');
-        if(fileActions.length === 1) {
-            fileActions[0].insertBefore(divTabRendering, fileActions[0].firstChild);
-            loadTabSize();
-        }
-    }
+	let attachUI = () => {
+		let fileActions = document.getElementsByClassName('file-actions');
+		if(fileActions.length === 1) {
+			fileActions[0].insertBefore(divTabRendering, fileActions[0].firstChild);
+			loadTabSize();
+		}
+	};
 
-    // Since Github is (at least mostly) an SPA, we need to refresh our state every time
-    // the body changes. Otherwise, UI wouldn't show if first page loaded doesn't contain
-    // a source code viewer.
-    let observer = new MutationObserver(attachUI);
-    observer.observe(document.body, {childList:true});
+	// Since Github is (at least mostly) an SPA, we need to refresh our state every time
+	// the body changes. Otherwise, UI wouldn't show if first page loaded doesn't contain
+	// a source code viewer.
+	let observer = new MutationObserver(attachUI);
+	observer.observe(document.body, {childList:true});
 })();
