@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub tab render size
 // @namespace    https://github.com/s-h-a-d-o-w
-// @version      1.0.2
+// @version      1.0.3
 // @description  Adds a drop down to the top right area of the source code viewer that
 //               lets you select the render size for tabs.
 //               Also works for gists.
@@ -90,4 +90,6 @@ tab-size: ${size} !important;
 	// a source code viewer.
 	let observer = new MutationObserver(attachUI);
 	observer.observe(document.body, {childList:true});
+
+	attachUI();
 })();
