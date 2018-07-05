@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub tab render size
 // @namespace    https://github.com/s-h-a-d-o-w
-// @version      1.0.3
+// @version      1.1.3
 // @description  Adds a drop down to the top right area of the source code viewer that
 //               lets you select the render size for tabs.
 //               Also works for gists.
@@ -81,6 +81,11 @@ tab-size: ${size} !important;
 		let fileActions = document.getElementsByClassName('file-actions');
 		if(fileActions.length === 1) {
 			fileActions[0].insertBefore(divTabRendering, fileActions[0].firstChild);
+			loadTabSize();
+		}
+		else {
+			// Use the last stored tab size on pages of github that don't contain a viewer.
+			// Useful when e.g. viewing the README of repos.
 			loadTabSize();
 		}
 	};
